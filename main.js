@@ -3,13 +3,13 @@ const css = document.getElementById('cssSource');
 const js = document.getElementById('jsSource');
 let timer, timeoutVal = 450;
 
-let saveData = JSON.parse(localStorage.getItem('savedCode'));
 if (!localStorage.getItem('savedCode')) {
     localStorage.setItem('savedCode', JSON.stringify({
         'html': `<h1>Hello!</h1>
 <p>Write HTML, CSS or JavaScript code here and click 'Run Code'.</p>`, 'css': '/* CSS goes here */', 'js': '// JS code here'
     }))
 }
+let saveData = JSON.parse(localStorage.getItem('savedCode'));
 
 function runCode() {
     var htmlCode = html.value;
