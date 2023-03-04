@@ -40,7 +40,11 @@ function exportCode(t) {
 }
 
 function clearCode() {
-    sourceCode.value = '';
+    localStorage.setItem('savedCode', JSON.stringify({
+        'html': `<h1>Hello!</h1>
+<p>Write HTML, CSS or JavaScript code here and click 'Run Code'.</p>`, 'css': '/* CSS goes here */', 'js': '// JS code here'
+    }));
+    loadCode();
 }
 
 function saveCode() {
