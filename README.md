@@ -1,2 +1,2 @@
-# WebDevIDE
-An IDE for Web Developers To Try Out HTML, CSS &amp; JS Code! (Created with CSS, HTML &amp; JS)
+# DevPad
+A web based code editor with a try it option to try out your HTML, CSS & JS directly in your web browser!
