@@ -2,57 +2,92 @@
 <html>
 	<head>
 		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-		<title>Web Developement IDE</title>
-		<h6>This Environment supports only HTML, CSS and Corelevel Javascript ( NO MODULES PLZ :') ). <br> Multiple files isn't supported till now so dont try now,we will surely add something in upcoming days.</h6>
+		<title>Web Development IDE</title>
 		<style type="text/css">
-			textarea, iframe {
-    			border: 2px solid #a00;
-    			height: 500px;
-    			width: 100%;	  
+			body {
+				background-color: #f2f2f2;
+				font-family: 'Roboto', sans-serif;
 			}
-    	</style>
+
+			h1 {
+				text-align: center;
+				margin-top: 20px;
+			}
+
+			textarea, iframe {
+				border: 2px solid #a00;
+				height: 500px;
+				width: 100%;
+				padding: 10px;
+			}
+
+			input[type=button] {
+				background-color: #4CAF50;
+				color: white;
+				padding: 12px 20px;
+				border: none;
+				border-radius: 4px;
+				cursor: pointer;
+				transition: background-color 0.3s ease-in-out;
+			}
+
+			input[type=button]:hover {
+				background-color: #3e8e41;
+			}
+
+			input[type=button]:active {
+				background-color: #297c37;
+			}
+		</style>
 	</head>
-    <body>
-        <table width="100%" border="0" cellspacing="5" cellpadding="5">
-            <tr>
-                <td width="50%" scope="col">&nbsp;</td>
-                <td width="50%" align="left" scope="col">		
-                    
-                </td>
-            </tr>
-            <tr>
-                <td> 
-                    <form>
-                        <strong>Code</strong>
-                        <textarea name="sourceCode" id="sourceCode">
+	<body>
+		<header>
+			<h1>DevPad</h1>
+		</header>
+		<table width="100%" border="0" cellspacing="5" cellpadding="5">
+			<tr>
+				<td width="50%" scope="col">&nbsp;</td>
+				<td width="50%" align="left" scope="col"></td>
+			</tr>
+			<tr>
+				<td>
+					<form>
+						<strong>Code</strong>
+						<textarea name="sourceCode" id="sourceCode">
 <html>
 <head>
-<title>Hello</title>
+<title>DevPad</title>
 </head>
 <body>
 <h1>Hello!</h1>
 <p>Write HTML, CSS or JavaScript code here and click 'Run Code'.</p>
 </body>
 </html>
-                        </textarea>
-                    </form>
-                </td>
-                <td><strong>Output</strong><iframe name="targetCode" id="targetCode"></iframe></td>
-            </tr>
-        </table>  
-        <script type="text/javascript">
-            function runCode()
-            {
-                var content = document.getElementById('sourceCode').value;
-                var iframe = document.getElementById('targetCode');
-                iframe = (iframe.contentWindow) ? iframe.contentWindow : (iframe.contentDocument.document) ? iframe.contentDocument.document : iframe.contentDocument;
-                iframe.document.open();
-                iframe.document.write(content);
-                iframe.document.close();
-                return false;
-            }
-            runCode();
-        </script>
-	    <center>  <input onclick="runCode();" type="button" value="Run Code">  </center>
-    </body>
+						</textarea>
+					</form>
+				</td>
+				<td><strong>Output</strong><iframe name="targetCode" id="targetCode" style="background-color: #fff;"></iframe></td>
+			</tr>
+		</table>
+		<center>
+			<input onclick="runCode();" type="button" value="Run Code">
+			<input onclick="clearCode();" type="button" value="Clear Code">
+		</center>
+		<script type="text/javascript">
+			function runCode() {
+				var content = document.getElementById('sourceCode').value;
+				var iframe = document.getElementById('targetCode');
+				iframe = (iframe.contentWindow) ? iframe.contentWindow : (iframe.contentDocument.document) ? iframe.contentDocument.document : iframe.contentDocument;
+				iframe.document.open();
+				iframe.document.write(content);
+				iframe.document.close();
+				return false;
+			}
+
+			function clearCode() {
+				document.getElementById('sourceCode').value = '';
+			}
+			runCode();
+		</script>
+	</body>
 </html>
