@@ -1,6 +1,11 @@
-const sourceCode = document.getElementById('sourceCode')
+const html = document.getElementById('htmlSource');
+const css = document.getElementById('cssSource');
+const js = document.getElementById('jsSource');
+
+let saveData = JSON.parse(localStorage.getItem('savedCode'));
+let iframe = document.getElementById('targetCode');
 if(!localStorage.getItem('savedCode')) {
-    localStorage.setItem('savedCode', `<html>
+    localStorage.setItem('savedCode', JSON.stringify({'html': `<html>
 <head>
 <title>DevPad</title>
 </head>
@@ -8,12 +13,13 @@ if(!localStorage.getItem('savedCode')) {
 <h1>Hello!</h1>
 <p>Write HTML, CSS or JavaScript code here and click 'Run Code'.</p>
 </body>
-</html>`)
+</html>`, 'css': '/* CSS goes here */', 'js': '// JS code here'}))
 }
 
 function runCode() {
-    var content = sourceCode.value;
-    var iframe = document.getElementById('targetCode');
+    var htmlCode = html.value;
+    var cssCode = css.value;
+    var jsCode = js.value
     iframe = (iframe.contentWindow) ? iframe.contentWindow : (iframe.contentDocument.document) ? iframe.contentDocument.document : iframe.contentDocument;
     iframe.document.open();
     iframe.document.write(content);
@@ -34,6 +40,8 @@ function loadCode() {
 }
 
 // Cleaner startup
-sourceCode.value = localStorage.getItem('savedCode');
+html.value = saveData.html;
+css.value = saveData.css;
+js.value = saveData.js;
 
 runCode();
