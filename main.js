@@ -17,8 +17,9 @@ function runCode() {
     var jsCode = js.value;
     if(jsCode.includes('alert')) {
         jsCode = jsCode.replace(/alert\(/g, 'console.log(\'[Alerted Output] \'+');
-    } else if(jsCode.includes('console.log')) {
-        jsCode = jsCode.replace(/console.log\(/g, 'console.log(\'[Output] \'+');
+    } 
+    if(jsCode.includes('console.log')) {
+        jsCode = jsCode.replace(/console.log\(/g, 'console.log(\'[Console Output] \'+');
     }
     let iframe = document.getElementById('targetCode');
     iframe = iframe.contentWindow;
