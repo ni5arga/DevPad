@@ -15,18 +15,28 @@ function runCode() {
     var htmlCode = html.value;
     var cssCode = css.value;
     var jsCode = js.value;
-    if(jsCode.includes('alert')) {
+    if (jsCode.includes('alert')) {
         jsCode = jsCode.replace(/alert\(/g, 'console.log(\'[Alerted Output] \'+');
-    } 
-    if(jsCode.includes('console.log')) {
+    }
+    if (jsCode.includes('console.log')) {
         jsCode = jsCode.replace(/console.log\(/g, 'console.log(\'[Console Output] \'+');
     }
     let iframe = document.getElementById('targetCode');
     iframe = iframe.contentWindow;
     iframe.document.open();
-    iframe.document.write(`<html><head><title>DevPad Output</title><style>${cssCode}</style></head><body>${htmlCode}<script>${jsCode}</script></body></html>`);
+    iframe.document.write(`<!DOCTYPE html><html><head><title>DevPad Output</title><style>${cssCode}</style></head><body>${htmlCode}<script>${jsCode}</script></body></html>`);
     iframe.document.close();
     return false;
+}
+
+function exportCode(t) {
+    var htmlCode = html.value;
+    var cssCode = css.value;
+    var jsCode = js.value;
+    var download = document.getElementById('download');
+    download.setAttribute('href', 'data:text/html;charset=utf-8,' + `<html><head><title>DevPad Output</title><style>${cssCode}</style></head><body>${htmlCode}<script>${jsCode}</script></body></html>`);
+    download.setAttribute('download', 'devpadoutput-' + new Date() + '.html');
+    download.click()
 }
 
 function clearCode() {
@@ -59,13 +69,13 @@ css.addEventListener('keyup', handleKeyUp);
 js.addEventListener('keypress', handleKeyPress);
 js.addEventListener('keyup', handleKeyUp);
 
-function handleKeyPress(e) {window.clearTimeout(timer);}
+function handleKeyPress(e) { window.clearTimeout(timer); }
 
 function handleKeyUp(e) {
-	window.clearTimeout(timer);
-	timer = window.setTimeout(() => {
+    window.clearTimeout(timer);
+    timer = window.setTimeout(() => {
         runCode();
-  }, timeoutVal);
+    }, timeoutVal);
 }
 
 setInterval(function () {

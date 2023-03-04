@@ -8,6 +8,7 @@
 </head>
 
 <body>
+	<a download id="download"></a>
 	<header>
 		<h1>DevPad</h1>
 	</header>
@@ -36,8 +37,8 @@
 	<center>
 		<button onclick="runCode();">Run Code</button>
 		<button onclick="clearCode();">Clear Code</button>
-		<button onclick="saveCode();">Save</button>
-		<button onclick="loadCode();">Load</button>
+		<button onclick="exportCode();">Export (.html)</button>
+		<input type="file" id="file-selector" hidden>
 	</center>
 	<script type="text/javascript" src="main.js"></script>
 </body>
