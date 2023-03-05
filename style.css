@@ -1,0 +1,64 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
+:root {
+    /* Customize parts of DevPad to your liking! */
+    --button-color: #4caf50;
+    --button-hover: #3e8e41;
+    --button-pressed: #297c37;
+
+    --background-color: #f2f2f2;
+    
+    --border-color: #a00;
+    --border-size: 2px;
+    --border-radius: 5px;
+
+    --text-color: #000;
+    --font-size: 14px;
+    --font: 'Roboto';
+}
+
+body {
+    background-color: var(--background-color);
+    font-family: var(--font);
+}
+
+h1 {
+    text-align: center;
+    margin-top: 20px;
+}
+
+textarea {
+    border: var(--border-size) solid var(--border-color);
+    border-radius: var(--border-radius);
+    height: 150px;
+    width: 95%;
+    padding: 10px;
+    font-size: var(--font-size);
+    color: var(--text-color);
+}
+
+iframe {
+    border: var(--border-size) solid #a00;
+    border-radius: var(--border-radius);;
+    height: 450px;
+    width: 95%;
+    padding: 10px;
+}
+
+button {
+    background-color: var(--button-color);
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out;
+}
+
+button:hover {
+    background-color: var(--button-hover);
+}
+
+button:active {
+    background-color: var(--button-pressed);
+}
