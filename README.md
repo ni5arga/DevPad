@@ -4,7 +4,6 @@ A web based code editor with a try it option to try out your HTML, CSS & JS dire
 - Separate spaces for HTML, CSS & JS code
 - Preview (Try It) option
 - Clear Code option
-- Export(.html) option
 ## Self Hosting
 ### GitHub Pages
 In order to host the site through GitHub Pages, fork this repository and enable GitHub Pages from the forked repository's settings. 
