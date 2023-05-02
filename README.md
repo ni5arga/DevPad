@@ -1,5 +1,5 @@
 # DevPad
-A web based code editor with a try it option to try out your HTML, CSS & JS directly in your web browser! 
+A web based code editor with a try it option to try out your HTML, CSS & JS directly in your web browser.
 ## Features
 - Separate spaces for HTML, CSS & JS code
 - Preview (Try It) option
