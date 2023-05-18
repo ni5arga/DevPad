@@ -14,4 +14,4 @@ In order to host the site through GitHub Pages, fork this repository and enable 
 ### Railway
 [![Deploy on Railway](https://railway.app/button.svg)](https://railway.app/template/C1Vonv)
 ## License
-DevPad is licensed under the MIT License.
+DevPad is licensed under the [MIT License](https://github.com/ni5arga/DevPad/blob/main/LICENSE)
