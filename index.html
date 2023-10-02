@@ -22,10 +22,10 @@
 			<td>
 				<form>
 					<strong>HTML</strong>
-					<div style="position: relative">
+					<div style="position: relative;">
 						<textarea placeholder="Enter HTML Source Code" id="htmlSource" spellcheck="false" oninput="update(this.value); sync_scroll(this);" onscroll="sync_scroll(this);" onkeydown="check_tab(this, event);"></textarea>
 						<pre id="highlighting" aria-hidden="true">
-							<code class="language-html" id="highlighting-content"></code>
+							<code class="language-html" id="highlighting-content" style="overflow: hidden;"></code>
 						</pre>
 					</div>
 					<strong>CSS</strong>

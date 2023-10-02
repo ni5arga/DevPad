@@ -17,6 +17,14 @@
     --font: 'Roboto';
 }
 
+* {
+  font-family: "Fira Code", monospace;
+}
+
+table {
+  table-layout: fixed;
+}
+
 textarea{
     background: black;
     color: white;
@@ -35,7 +43,7 @@ h1 {
 iframe {
     border: var(--border-size) solid #a00;
     border-radius: var(--border-radius);;
-    height: 450px;
+    height: 535px;
     width: 95%;
     padding: 10px;
 }
@@ -64,10 +72,9 @@ button:active {
   width: calc(100% - 32px);
   height: 150px;
   border-radius: 5px;
-  white-space: nowrap; /* Allows textarea to scroll horizontally */
+  white-space: nowrap;
 }
 #htmlSource, #highlighting, #highlighting *, textarea {
-  /* Also add text styles to highlighing tokens */
   font-size: 15pt;
   font-family: monospace;
   line-height: 1.5;
@@ -88,14 +95,9 @@ button:active {
   resize: none;
 }
 
-/* Can be scrolled */
 #editing, #highlighting {
     overflow: auto;
-    white-space: nowrap; /* Allows textarea to scroll horizontally */
-}
-
-* {
-  font-family: "Fira Code", monospace;
+    white-space: nowrap;
 }
 
 p code {
@@ -130,7 +132,7 @@ pre[class*="language-"] {
   padding: .4em .8em;
   margin: .5em 0;
   overflow: auto;
-  background: black; /* - WebCoder49 */
+  background: black;
 }
 
 code[class*="language-"] {
@@ -139,7 +141,6 @@ code[class*="language-"] {
   box-shadow: -.3em 0 0 .3em black, .3em 0 0 .3em black;
 }
 
-/* Inline code */
 :not(pre) > code[class*="language-"] {
   padding: .2em;
   border-radius: .3em;
@@ -215,7 +216,6 @@ code[class*="language-"] {
   color: red;
 }
 
-/* Plugin styles: Diff Highlight */
 pre.diff-highlight.diff-highlight > code .token.deleted:not(.prefix),
 pre > code.diff-highlight.diff-highlight .token.deleted:not(.prefix) {
   background-color: rgba(255, 0, 0, .3);
@@ -227,4 +227,3 @@ pre > code.diff-highlight.diff-highlight .token.inserted:not(.prefix) {
   background-color: rgba(0, 255, 128, .3);
   display: inline;
 }
-
