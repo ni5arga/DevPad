@@ -21,11 +21,15 @@ function runCode() {
     if (jsCode.includes('console.log')) {
         jsCode = jsCode.replace(/console.log\(/g, 'console.log(\'[Console Output] \'+');
     }
-    let iframe = document.getElementById('targetCode');
-    iframe = iframe.contentWindow;
-    iframe.document.open();
-    iframe.document.write(`<!DOCTYPE html><html><head><title>DevPad Output</title><style>${cssCode}</style></head><body>${htmlCode}<script>${jsCode}</script></body></html>`);
-    iframe.document.close();
+    let iframe = document.createElement('iframe');
+    let oi = document.querySelector('#targetCode')
+    iframe.id = 'targetCode';
+    oi.parentElement.appendChild(iframe);
+    oi.remove();
+    let iframecw = iframe.contentWindow;
+    iframecw.document.open();
+    iframecw.document.write(`<!DOCTYPE html><html><head><title>DevPad Output</title><style>${cssCode}</style></head><body>${htmlCode}<script>${jsCode}</script></body></html>`);
+    iframecw.document.close();
     return false;
 }
 
